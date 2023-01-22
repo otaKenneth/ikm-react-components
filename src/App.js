@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
+
+import { CustomButton } from './components';
 import './App.css';
+import { get, store } from './api';
 
 function App() {
+  const [num, setNum] = React.useState(0);
+
+  const handleClick = () => {
+    store({date: new Date}).then(r => {
+      if (r.data.success) setNum(s => s+=1);
+    }).catch(e => {
+      console.log(e)
+    })
+  }
+
+  React.useEffect(() => {
+    get().then(r => {
+      setNum(r.data.data);
+    }).catch(e => {
+      console.log(e)
+    })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ padding: '20px' }}>
+      <div>{num}</div>
+      <CustomButton
+        size='large'
+        type="primary"
+        onClick={handleClick}
+      >Click Me!</CustomButton>
     </div>
   );
 }
