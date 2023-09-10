@@ -230,14 +230,15 @@ footer {
     padding: 3.4em 2.4em;
 }
 
+footer .title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
 #footer-nav > div {
     margin-right: 3em;
 }
 
-#footer-nav .title {
-    font-size: 12px;
-    font-weight: bold;
-}
 
 #footer-nav ul {
     padding: 0px;
@@ -247,6 +248,32 @@ footer {
 #footer-nav li {
     margin-top: 10px;
     list-style-type: none;
+}
+
+footer #social-payment {
+    margin-left: 3.6em;
+}
+
+footer #social-payment > div{
+    margin-bottom: 2em;
+}
+
+#social-payment .links-container {
+    margin-top: 1em;
+}
+
+#social a {
+    margin-right: 10px;
+}
+
+#payments .links-container img {
+    width: 37.5px;
+    margin-right: 1em;
+}
+
+footer #bottom {
+    display: flex;
+    justify-content: space-between;
 }
 
 .dropdown a.btn:focus {
