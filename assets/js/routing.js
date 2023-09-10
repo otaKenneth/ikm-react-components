@@ -1,3 +1,7 @@
+function linkTo(strLinkName) {
+    history.pushState(null, null, `${strLinkName}`);
+}
+
 $(document).ready(() => {
 
     // Handle the browser's back/forward navigation
