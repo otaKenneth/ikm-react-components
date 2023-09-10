@@ -31,30 +31,7 @@ $(document).ready(() => {
             $('#bag-container').append(temp_elBag);
         }
         
-        /**
-         * Order Summary
-         */
-        // Clone the bag for each ar_bag
-        const copy_elCheckoutProd = $('#list-of-products li').eq(0).clone();
-        
-        // Clear the trend-container first
-        $('#list-of-products').empty();
-        
-        // Loop through each bag object to add in bag-container
-        let total_price = 0;
-        for (const objBag of ar_bag) {
-            const temp_elBag = copy_elCheckoutProd.clone();
-            // Update the cloned element with trend data
-            temp_elBag.find('h6').text(objBag.name);
-            temp_elBag.find('small.description').text(objBag.description);
-            temp_elBag.find('span.price').text(objBag.price);
-            total_price += parseFloat(objBag.price);
-        
-            // Append the updated element to the container
-            $('#list-of-products').append(temp_elBag);
-        }
-
-        $('strong#price-total').text(`$${total_price}`);
+        updateOrderSummary();
         
         /**
          * Bag Actions
@@ -78,6 +55,7 @@ $(document).ready(() => {
 
             ar_bag[target.closest('.bag').attr("data-id") - 1].count = final_cnt;
             ar_bag[target.closest('.bag').attr("data-id") - 1].price = final_price;
+            updateOrderSummary();
         })
         
         $('.item-cnt-btn.add-btn').on('click', (e) => {
@@ -99,8 +77,36 @@ $(document).ready(() => {
 
             ar_bag[target.closest('.bag').attr("data-id") - 1].count = final_cnt;
             ar_bag[target.closest('.bag').attr("data-id") - 1].price = final_price;
+            updateOrderSummary();
         })
 
+    }
+
+    /**
+     * Order Summary
+     */
+    function updateOrderSummary () {
+        // Clone the bag for each ar_bag
+        const copy_elCheckoutProd = $('#list-of-products li').eq(0).clone();
+        
+        // Clear the trend-container first
+        $('#list-of-products').empty();
+        
+        // Loop through each bag object to add in bag-container
+        let total_price = 0;
+        for (const objBag of ar_bag) {
+            const temp_elBag = copy_elCheckoutProd.clone();
+            // Update the cloned element with trend data
+            temp_elBag.find('h6').text(objBag.name);
+            temp_elBag.find('small.description').text(objBag.description);
+            temp_elBag.find('span.price').text(objBag.price);
+            total_price += parseFloat(objBag.price);
+        
+            // Append the updated element to the container
+            $('#list-of-products').append(temp_elBag);
+        }
+
+        $('strong#price-total').text(`$${total_price}`);
     }
 
 })
