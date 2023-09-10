@@ -1,0 +1,65 @@
+.rb-box {
+    perspective: 1000px;
+    position: relative;
+    width: 265px;
+    height: 415px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all ease-in-out 5s;
+}
+
+.rb-box-card {
+    transition: all ease-in-out 5s;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0 20px 10px 20px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform-style: preserve-3d;
+}
+
+.back {
+    background-color: #3a3839;
+    color: white;
+    transform: rotateY(180deg);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.rb-box:hover .front {
+    transform: rotateY(180deg);
+    display: none;
+}
+
+.rb-box:hover .back {
+    transform: rotateY(0deg);
+    display: flex;
+}
+
+.rb-box .description{
+    height: 50px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.rb-box .prices {
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    bottom: 0px;
+}
+
+.rb-box .sale-price {
+    color: red;
+    margin-right: 10%;
+}
+
+.rb-box .o-price {
+    text-decoration-line: line-through;
+}
