@@ -11,6 +11,29 @@ body {
     font-weight: bold;
 }
 
+.lg-btn {
+    width: 45%;
+    margin-top: 30px;
+    font-size: 36px;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s, font-weight 0.3s, width 0.3s;
+    align-self: center;
+    border-radius: 0px;
+}
+
+.sm-btn {
+    margin-top: 30px;
+    font-size: 18px;
+    background-color: #ffffff;
+    transition: font-size 0.3s;
+    align-self: center;
+    border-radius: 0px;
+}
+
+.sm-btn:hover {
+    font-size: 16px;
+}
+
 .h1 {
     font-size: 40px;
     font-weight: bold;
@@ -77,9 +100,15 @@ header {
     margin-top: 30px;
     font-size: 36px;
     background-color: #ffffff;
-    box-shadow: #666565 0px 7px 4px 0px;
+    transition: box-shadow 0.3s, font-weight 0.3s, width 0.3s;
     align-self: center;
     border-radius: 0px;
+}
+
+#shop-now.btn:hover {
+    width: 47%;
+    box-shadow: #666565 0px 7px 4px 0px;
+    font-weight: 600;
 }
 
 #side-wide-deals {
@@ -120,7 +149,7 @@ header {
     border-radius: 50px;
     cursor: pointer;
     user-select: none;
-    transition: font-weight 0.8s ease-in;
+    transition: font-weight 0.3s;
 }
 
 .chip:hover {
@@ -169,14 +198,55 @@ header {
 
 #insta {
     height: 550px;
+    padding-top: 3em;
+    align-items: center;
+    flex-direction: column;
+    background: #F2F2F2;
+}
+
+#insta-container {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#insta-container img {
+    width: 225px;
+    height: 225px;
+}
+
+#view-all-post-btn {
+    margin-top: 2.5em;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 #newsletter {
     height: 75px;
+    background: #000000;
 }
 
-#footer {
+footer {
     height: 360px;
+    padding: 3.4em 2.4em;
+}
+
+#footer-nav > div {
+    margin-right: 3em;
+}
+
+#footer-nav .title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#footer-nav ul {
+    padding: 0px;
+    font-size: 12px;
+}
+
+#footer-nav li {
+    margin-top: 10px;
+    list-style-type: none;
 }
 
 .dropdown a.btn:focus {

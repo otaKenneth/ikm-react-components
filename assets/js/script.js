@@ -76,6 +76,24 @@ const ar_recentlyBought = [
     }
 ];
 
+const ar_Insta = [
+    {
+        "source": "assets/images/insta/Rectangle 10.png"
+    },
+    {
+        "source": "assets/images/insta/Rectangle 11.png"
+    },
+    {
+        "source": "assets/images/insta/Rectangle 12.png"
+    },
+    {
+        "source": "assets/images/insta/Rectangle 13.png"
+    },
+    {
+        "source": "assets/images/insta/Rectangle 14.png"
+    },
+]
+
 $(document).ready(() => {
     $('#navigation #left-nav a').click((e) => {
         e.preventDefault();
@@ -85,6 +103,7 @@ $(document).ready(() => {
 
     loadTrends();
     loadRecentlyBought();
+    loadNextInspo();
     
     async function loadTrends() {
         // Clone the trendbox for each trend (assuming trendbox is a template)
@@ -107,14 +126,14 @@ $(document).ready(() => {
 
     async function loadRecentlyBought() {
         // Clone the rbbox for each rb
-        const copy_elTrend = $('#rb-container .rb-box').eq(0).clone();
+        const copy_elRB = $('#rb-container .rb-box').eq(0).clone();
         
         // Clear the rb-container first
         $('#rb-container').empty();
         
         // Loop through each recently bought object/array to add in recently bought container
         for (const objRB of ar_recentlyBought) {
-            const temp_elRB = copy_elTrend.clone();
+            const temp_elRB = copy_elRB.clone();
             // Update the cloned element with trend data
             temp_elRB.find('img').attr('src', objRB.source);
             temp_elRB.find('div.description').text(objRB.description);
@@ -127,6 +146,23 @@ $(document).ready(() => {
         
             // Append the updated element to the container
             $('#rb-container').append(temp_elRB);
+        }
+    }
+
+    async function loadNextInspo() {
+        const copy_elNextInspo = $('#insta-container img').eq(0).clone();
+
+        // Clear the insta-container first
+        $('#insta-container').empty();
+        
+        // Loop through each insta object/array to add in insta container
+        for (const objNI of ar_Insta) {
+            const temp_elNxtIns = copy_elNextInspo.clone();
+            // Update the cloned element with insta data
+            temp_elNxtIns.attr('src', objNI.source);
+        
+            // Append the updated element to the container
+            $('#insta-container').append(temp_elNxtIns);
         }
     }
 })
