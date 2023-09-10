@@ -126,6 +126,51 @@ header {
 
 #side-wide-deals {
     height: 150px;
+    padding: 3em 5em;
+}
+
+#side-wide-deals #container {
+    justify-content: space-around;
+    align-items: center;
+}
+
+#side-wide-deals #container #checkout-deal {
+    margin: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    transition: font-size 0.3s;
+}
+
+#side-wide-deals #container #checkout-deal:hover {
+    font-size: 16px;
+}
+
+#side-wide-deals #container .deals {
+    font-size: 10px;
+    cursor: pointer;
+    transition: font-size 0.3s;
+}
+
+#side-wide-deals #container .deals:hover {
+    font-size: 12px;
+}
+
+#side-wide-deals #container .deals .deal-price {
+    font-size: 38px;
+    font-weight: 600;
+}
+
+#side-wide-deals #container .deals .off-text {
+    font-size: 18px;
+    font-weight: 800;
+    margin-left: 10px;
+}
+
+#side-wide-deals #container .deals .deal-price {
+    font-size: 38px;
+    font-weight: 600;
 }
 
 #vp-exclusive {
