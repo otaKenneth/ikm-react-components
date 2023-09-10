@@ -1,0 +1,95 @@
+body {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    color: black;
+    height: 4000px;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin: 0 25px;
+}
+
+#navigation {
+    width: 100%;
+}
+
+#navigation, #navigation > #left-nav, #navigation > #right-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#navigation, #navigation > #left-nav > a {
+    color: black;
+}
+
+#navigation > #left-nav > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navigation .active {
+    font-weight: 600;
+}
+
+#left-nav > li {
+    margin: 30px;
+}
+
+#navigation > #right-nav {
+    width: 310px;
+    align-items: center;
+    margin: 0;
+}
+
+#navigation > #right-nav > li {
+    cursor: pointer;
+    list-style-type: none;
+}
+
+#benefits {
+    height: 50px;
+    background-color: #F2F2F2;;
+}
+
+#hero {
+    height: 650px;
+}
+
+#side-wide-deals {
+    height: 150px;
+}
+
+#vp-exclusive {
+    height: 75px;
+    background-color: #000000;
+}
+
+#trending {
+    height: 1040px;
+}
+
+#new-in {
+    height: 400px;
+    background: linear-gradient(90deg, rgba(255, 203, 124, 0) 0%, #FFCB7C 100%);
+}
+
+#recently-bought {
+    height: 580px;
+}
+
+#insta {
+    height: 550px;
+}
+
+#newsletter {
+    height: 75px;
+}
+
+#footer {
+    height: 360px;
+}
