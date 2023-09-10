@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Product 1",
+        "description": "Description of Product 1.",
+        "stock": 10,
+        "baseprice": 10.99,
+        "count": 1,
+        "price": 10.99,
+        "source": "https://picsum.photos/200/200",
+        "sale": false,
+        "sale_price": ""
+    },
+    {
+        "id": 2,
+        "name": "Product 2",
+        "description": "Description of Product 2.",
+        "count": 1,
+        "baseprice": 15.99,
+        "price": 15.99,
+        "stock": 5,
+        "source": "https://picsum.photos/200/200",
+        "sale": false,
+        "sale_price": ""
+    },
+    {
+        "id": 3,
+        "name": "Product 3",
+        "description": "Description of Product 3.",
+        "baseprice": 12.49,
+        "price": 12.49,
+        "stock": 99,
+        "count": 1,
+        "source": "https://picsum.photos/200/200",
+        "sale": false,
+        "sale_price": ""
+    }
+]
