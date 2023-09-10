@@ -89,6 +89,19 @@ header {
 #benefits {
     height: 50px;
     background-color: #F2F2F2;
+    justify-content: space-around;
+}
+
+#benefits > div {
+    cursor: pointer;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#benefits > div > span {
+    margin-left: 15px;
 }
 
 #hero {

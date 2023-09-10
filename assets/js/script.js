@@ -101,6 +101,10 @@ $(document).ready(() => {
         $(e.target).addClass('active');
     })
 
+    setTimeout(() => {
+        $('#benefits > div').css('opacity', '1');
+    }, 300)
+
     loadTrends();
     loadRecentlyBought();
     loadNextInspo();
