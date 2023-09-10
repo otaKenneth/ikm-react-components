@@ -15,21 +15,15 @@
         <link href="assets/css/style.css" rel="stylesheet">
         <link href="assets/css/slider.css" rel="stylesheet">
         <link href="assets/css/recently-bought.css" rel="stylesheet">
-
-        <script>
-            const ar_trends = fetch('data/trends.json');
-            const ar_recentlyBought = fetch('data/rbs.json');
-            const ar_Insta = fetch('data/instas.json');
-        </script>
     </head>
     <body>
         <header>
             <nav id="navigation" class="nav justify-space-between">
                 <div id="left-nav" class="d-flex justify-space-between">
-                    <a class="nav-link active" href="#">WOMEN</a>
-                    <a class="nav-link" href="#">PLUS</a>
-                    <a class="nav-link" href="#">MEN</a>
-                    <a class="nav-link" href="#">ACCESSORIES</a>
+                    <a class="nav-link active" href="#" onclick="linkTo('')">WOMEN</a>
+                    <a class="nav-link" href="#" onclick="linkTo('')">PLUS</a>
+                    <a class="nav-link" href="#" onclick="linkTo('')">MEN</a>
+                    <a class="nav-link" href="#" onclick="linkTo('')">ACCESSORIES</a>
                 </div>
                 <img src="assets/images/Logo.png" alt="logo: THREADED" style="height: 16px; align-self: center;">
                 <ul id="right-nav" class="d-flex">
@@ -126,8 +120,8 @@
         </footer>
         <!-- javascripts here -->
         <script src="assets/js/jqeury-3.7.1.min.js"></script>
-        <script src="assets/js/bootstrap5-js/bootstrap.min.js"></script>
+        <script src="assets/js/bootstrap5-js/bootstrap.min.js"></script> 
         <script src="assets/js/routing.js"></script>
-        <script async src="assets/js/script.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>

@@ -1,20 +1,6 @@
-const ar_Insta = [
-    {
-        "source": "assets/images/insta/Rectangle 10.png"
-    },
-    {
-        "source": "assets/images/insta/Rectangle 11.png"
-    },
-    {
-        "source": "assets/images/insta/Rectangle 12.png"
-    },
-    {
-        "source": "assets/images/insta/Rectangle 13.png"
-    },
-    {
-        "source": "assets/images/insta/Rectangle 14.png"
-    },
-]
+var ar_trends = [];
+var ar_recentlyBought = [];
+var ar_insta = [];
 
 var hasLoaded = {
     "benefits": false,
@@ -44,6 +30,7 @@ $(document).ready(() => {
         var rect = el.getBoundingClientRect();
         return (
             rect.top >= 0 &&
+            rect.left >= 0 &&
             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
         );
     }
@@ -64,7 +51,6 @@ $(document).ready(() => {
 
         if (!hasLoaded.trends) {
             if (isElementInViewport($('#trending')[0])) {
-                console.log('pumasok')
                 loadTrends();
                 hasLoaded.trends = true;
             }
@@ -86,6 +72,11 @@ $(document).ready(() => {
     }
     
     async function loadTrends() {
+        await fetch('data/trends.json')
+          .then(resp => resp.json())
+          .then(data => {
+            ar_trends = data;
+          })
         // Clone the trendbox for each trend (assuming trendbox is a template)
         const copy_elTrend = $('#trend-container .trends-box').eq(0).clone();
         
@@ -112,6 +103,11 @@ $(document).ready(() => {
     }
 
     async function loadRecentlyBought() {
+        await fetch('data/rbs.json')
+          .then(resp => resp.json())
+          .then(data => {
+            ar_recentlyBought = data;
+          })
         // Clone the rbbox for each rb
         const copy_elRB = $('#rb-container .rb-box').eq(0).clone();
         
@@ -142,6 +138,11 @@ $(document).ready(() => {
     }
 
     async function loadNextInspo() {
+        await fetch('data/instas.json')
+          .then(resp => resp.json())
+          .then(data => {
+            ar_insta = data;
+          })
         const copy_elNextInspo = $('#insta-container img').eq(0).clone();
 
         // Clear the insta-container first
@@ -149,7 +150,7 @@ $(document).ready(() => {
         
         // Loop through each insta object/array to add in insta container
         let key = 1;
-        for (const objNI of ar_Insta) {
+        for (const objNI of ar_insta) {
             const temp_elNxtIns = copy_elNextInspo.clone();
             // Update the cloned element with insta data
             temp_elNxtIns.attr('src', objNI.source);
