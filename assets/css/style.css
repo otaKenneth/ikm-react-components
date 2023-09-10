@@ -234,6 +234,7 @@ header {
     width: 265px;
     text-align: center;
     margin-bottom: 3em;
+    cursor: pointer;
 }
 
 .trends-box > h4 {
@@ -314,6 +315,7 @@ header {
     width: 265px;
     height: 415px;
     padding: 10px 15px;
+    cursor: pointer;
 }
 
 .rb-box .description{
@@ -365,6 +367,33 @@ header {
 #newsletter {
     height: 75px;
     background: #000000;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#newsletter h1{
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+#newsletter #email-add-container{
+    background-color: #FFFFFF;
+    font-size: 14px;
+    padding: 10px;
+}
+
+#newsletter #email-add-container input {
+    outline: none;
+    border: none;
+}
+
+#newsletter #email-add-container input:focus {
+    outline: none;
+    border: none;
 }
 
 footer {
