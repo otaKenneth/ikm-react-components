@@ -117,6 +117,7 @@ $(document).ready(() => {
         $('#trend-container').empty();
         
         // Loop through each trend object to add in trend-container
+        let key = 1;
         for (const objTrend of ar_trends) {
             const temp_elTrend = copy_elTrend.clone();
             // Update the cloned element with trend data
@@ -124,7 +125,11 @@ $(document).ready(() => {
             temp_elTrend.find('h4').text(objTrend.name);
         
             // Append the updated element to the container
-            $('#trend-container').append(temp_elTrend);
+            setTimeout(() => {
+                temp_elTrend.addClass('grow-transition')
+                $('#trend-container').append(temp_elTrend);
+            }, (330 * key))
+            key++;
         }
     }
 
@@ -136,6 +141,7 @@ $(document).ready(() => {
         $('#rb-container').empty();
         
         // Loop through each recently bought object/array to add in recently bought container
+        let key = 1;
         for (const objRB of ar_recentlyBought) {
             const temp_elRB = copy_elRB.clone();
             // Update the cloned element with trend data
@@ -149,7 +155,11 @@ $(document).ready(() => {
             }
         
             // Append the updated element to the container
-            $('#rb-container').append(temp_elRB);
+            setTimeout(() => {
+                temp_elRB.addClass('grow-transition')
+                $('#rb-container').append(temp_elRB);
+            }, (330 * key))
+            key++;
         }
     }
 
@@ -170,5 +180,3 @@ $(document).ready(() => {
         }
     }
 })
-
-  

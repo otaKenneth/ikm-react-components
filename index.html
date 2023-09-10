@@ -14,6 +14,7 @@
 
         <link href="assets/css/style.css" rel="stylesheet">
         <link href="assets/css/slider.css" rel="stylesheet">
+        <link href="assets/css/recently-bought.css" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -169,20 +170,30 @@
                 <button class="btn sm-btn">SHOP NOW</button>
             </div>
         </section>
+
         <section id="recently-bought" class="d-flex justify-content-start">
             <h1 class="h1">Recently Bought</h1>
             <div id="rb-container" class="d-flex">
                 <div class="rb-box">
-                    <div class="d-flex justify-content-center"><img></div>
-                    <div class="description d-flex"></div>
-                    <div class="prices">
-                        <span class="price"></span>
-                        <span class="sale-price"></span>
-                        <span class="o-price"></span>
+                    <div class="rb-box-card front">
+                        <div class="d-flex justify-content-center"><img></div>
+                        <div class="description d-flex"></div>
+                        <div class="prices">
+                            <span class="price"></span>
+                            <span class="sale-price"></span>
+                            <span class="o-price"></span>
+                        </div>
+                    </div>
+                    <div class="rb-box-card back">
+                        <!-- Back content -->
+                        <div class="buy-button">
+                            BUY
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <section id="insta" class="d-flex justify-content-start">
             <h1 class="h1">Your Next Inspo</h1>
             <p style="font-size: 14px; margin-top: 1em; margin-bottom: 3em;">Checkout who's wearing what by using #THREADEDInspo on Instagram</p>

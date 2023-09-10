@@ -311,35 +311,6 @@ header {
     flex-direction: column;
 }
 
-.rb-box {
-    width: 265px;
-    height: 415px;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-.rb-box .description{
-    height: 50px;
-    font-size: 14px;
-    align-items: center;
-}
-
-.rb-box .prices {
-    font-size: 14px;
-    font-weight: bold;
-    position: relative;
-    bottom: 0px;
-}
-
-.rb-box .sale-price {
-    color: red;
-    margin-right: 10%;
-}
-
-.rb-box .o-price {
-    text-decoration-line: line-through;
-}
-
 #insta {
     height: 550px;
     padding-top: 3em;
