@@ -6,22 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="assets/css/bootstrap5-css/bootstrap.min.css" rel="stylesheet">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <link href="assets/fonts/fonts.css">
 
         <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/slider.css" rel="stylesheet">
     </head>
     <body>
         <header>
             <nav id="navigation" class="nav justify-space-between">
-                <div id="left-nav">
+                <div id="left-nav" class="d-flex justify-space-between">
                     <a class="nav-link active" href="#">WOMEN</a>
                     <a class="nav-link" href="#">PLUS</a>
                     <a class="nav-link" href="#">MEN</a>
                     <a class="nav-link" href="#">ACCESSORIES</a>
                 </div>
                 <img src="assets/images/Logo.png" alt="logo: THREADED" style="height: 16px; align-self: center;">
-                <ul id="right-nav">
+                <ul id="right-nav" class="d-flex">
                     <li>
                         <img src="assets/images/bx_bx-user.png" alt="user"/>
                     </li>
@@ -52,8 +54,23 @@
 
         <div id="benefits"></div>
         <section id="hero">
-            <img src="assets/images/Mask Group.png" alt="group-1">
-            <img src="assets/images/Mask Group-1.png" alt="">
+            <div id="slider-container" class="d-flex justify-content-center">
+                <a id="slide-left" class="arrow-slider" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <div id="slider" class="d-flex">
+                    <div class="slide active d-flex justify-content-center"
+                      style="background-image: url('assets/images/Mask Group.png'), url('assets/images/Mask Group-1.png');"
+                    >
+                        <div class="d-flex justify-content-start slide-hero">
+                            <img src="assets/images/hero.png" alt="">
+                            <button id="shop-now" class="btn" type="button">SHOP NOW</button>
+                        </div>
+                    </div>
+                </div>
+                <a id="slide-right" class="arrow-slider" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+            <div id="slider-bullets" class="d-flex justify-content-center" style="height: fit-content;">
+                <span class="slider-bullet active"></span>
+            </div>
         </section>
         <div id="side-wide-deals"></div>
         <div id="vp-exclusive"></div>

@@ -1,5 +1,7 @@
+@import url('../fonts/fonts.css');
+
 body {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: black;
     height: 4000px;
@@ -14,12 +16,11 @@ header {
 
 #navigation {
     width: 100%;
+    justify-content: space-between;
 }
 
 #navigation, #navigation > #left-nav, #navigation > #right-nav {
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 #navigation, #navigation > #left-nav > a {
@@ -42,6 +43,7 @@ header {
 
 #navigation > #right-nav {
     width: 310px;
+    justify-content: space-around;
     align-items: center;
     margin: 0;
 }
@@ -53,11 +55,21 @@ header {
 
 #benefits {
     height: 50px;
-    background-color: #F2F2F2;;
+    background-color: #F2F2F2;
 }
 
 #hero {
     height: 650px;
+}
+
+#shop-now.btn {
+    width: 45%;
+    margin-top: 30px;
+    font-size: 36px;
+    background-color: #ffffff;
+    box-shadow: #666565 0px 7px 4px 0px;
+    align-self: center;
+    border-radius: 0px;
 }
 
 #side-wide-deals {
@@ -92,4 +104,8 @@ header {
 
 #footer {
     height: 360px;
+}
+
+.dropdown a.btn:focus {
+    box-shadow: none;
 }
