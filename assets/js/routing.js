@@ -4,16 +4,14 @@ function linkTo(strLinkName) {
 }
 
 $(document).ready(() => {
-    $("#content").load("pages/home.html");
-
-    // Handle the browser's back/forward navigation
-    window.addEventListener("popstate", function (e) {
-        console.log(e);
-
-        let arloc = this.location.pathname.split("#");
-        let new_path = arloc[arloc.length - 1];
-        loadContent(new_path)
-    });
+    // Check the URL hash on page load
+    const hash = window.location.hash.substring(1); // Remove the "#" character
+    if (hash) {
+        loadContent(hash);
+    } else {
+        // Load the default content when there's no hash
+        loadContent("home");
+    }
 })
 
 function loadContent (str) {

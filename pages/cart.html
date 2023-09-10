@@ -1,3 +1,65 @@
-<div>
-    Hello World
+<div class="container mt-5">
+    <h1 class="mb-4">Shopping Bag (<span id="item-cnt"></span>)</h1>
+
+    <div class="row">
+        <div id="bag-container" class="col-md-8 mb-4">
+            <!-- Product Cards -->
+            <div class="bag">
+                <div class="row" style="overflow: hidden; padding: 5px 5px;">
+                    <div class="col-md-3" style="height: 50px;">
+                        <img src="" alt="product">
+                    </div>
+                    <div class="col-md-5 d-block">
+                        <h5 class="card-title"></h5>
+                        <p class="description card-text"></p>
+                        <div class="input-group" style="width: 120px;">
+                            <div class="input-group-prepend">
+                                <button class="item-cnt-btn sub-btn btn btn-outline-secondary">-</button>
+                            </div>
+                            <input type="text" disabled style="background-color: #ffffff; text-align: center;" class="form-control" id="itemCount" value="1">
+                            <div class="input-group-append">
+                                <button class="item-cnt-btn add-btn btn btn-outline-secondary">+</button>
+                            </div>
+                        </div>                        
+                        <p class="price card-text"></p>
+                    </div>
+                    <div class="col-md-3 d-block">
+                        <button class="btn btn-danger btn-block">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Order Summary</h5>
+        
+                    <!-- List of items in the cart -->
+                    <ul id="list-of-products" class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0"></h6>
+                                <small class="description text-muted"></small>
+                            </div>
+                            <span class="price text-muted"></span>
+                        </li>
+                    </ul>
+        
+                    <!-- Order total -->
+                    <div class="d-flex justify-content-between">
+                        <span>Total (USD)</span>
+                        <strong id="price-total">$26.98</strong>
+                    </div>
+        
+                    <!-- Checkout buttons -->
+                    <div class="mt-3">
+                        <button class="btn btn-primary btn-block">Checkout with Card</button>
+                        <button class="btn btn-secondary btn-block">Checkout with PayPal</button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
 </div>
+<script src="assets/js/cart.js"></script>
