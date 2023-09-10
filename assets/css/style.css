@@ -40,6 +40,11 @@ body {
     margin-bottom: 1rem;
 }
 
+.grow-transition {
+    transition: transform 0.5s ease;
+    transform: scale(1);
+}
+
 header {
     height: 70px;
     display: flex;
@@ -96,8 +101,8 @@ header {
     cursor: pointer;
     justify-content: space-around;
     align-items: center;
-    /* opacity: 0;
-    transition: opacity 0.3s; */
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 #benefits > div > span {
@@ -219,7 +224,7 @@ header {
 }
 
 #trending {
-    height: 1040px;
+    height: 500px;
     padding: 3em;
     align-items: center;
     flex-direction: column;

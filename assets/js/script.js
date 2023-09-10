@@ -94,20 +94,62 @@ const ar_Insta = [
     },
 ]
 
+var hasLoaded = {
+    "benefits": false,
+    "trends": false,
+    "rb": false,
+    "nextinsta":false
+};
+
 $(document).ready(() => {
+    $(window).on('scroll', handleScroll);
+
     $('#navigation #left-nav a').click((e) => {
         e.preventDefault();
         $('#navigation #left-nav a').removeClass('active');
         $(e.target).addClass('active');
     })
 
-    // setTimeout(() => {
-    //     $('#benefits > div').css('opacity', '1');
-    // }, 300)
+    function isElementInViewport (el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
 
-    loadTrends();
-    loadRecentlyBought();
-    loadNextInspo();
+    function handleScroll () {
+        if (!hasLoaded.benefits) {
+            if (isElementInViewport($('#benefits')[0])) {
+                setTimeout(() => {
+                    $('#benefits > div').css('opacity', '1');
+                    hasLoaded.benefits = true;
+                }, 300)
+            }
+        }
+
+        if (!hasLoaded.trends) {
+            if (isElementInViewport($('#trending')[0])) {
+                console.log('pumasok')
+                loadTrends();
+                hasLoaded.trends = true;
+            }
+        }
+
+        if (!hasLoaded.rb) {
+            if (isElementInViewport($('#recently-bought')[0])) {
+                loadRecentlyBought();
+                hasLoaded.rb = true;
+            }
+        }
+
+        if (!hasLoaded.nextinsta) {
+            if (isElementInViewport($('#insta')[0])) {
+                loadNextInspo();
+                hasLoaded.nextinsta = true;
+            }
+        }
+    }
     
     async function loadTrends() {
         // Clone the trendbox for each trend (assuming trendbox is a template)
@@ -126,11 +168,13 @@ $(document).ready(() => {
         
             // Append the updated element to the container
             setTimeout(() => {
-                temp_elTrend.addClass('grow-transition')
+                // temp_elTrend.addClass('grow-transition');
                 $('#trend-container').append(temp_elTrend);
             }, (330 * key))
             key++;
         }
+
+        $('#trending').css('height', '1040px')
     }
 
     async function loadRecentlyBought() {
@@ -170,13 +214,19 @@ $(document).ready(() => {
         $('#insta-container').empty();
         
         // Loop through each insta object/array to add in insta container
+        let key = 1;
         for (const objNI of ar_Insta) {
             const temp_elNxtIns = copy_elNextInspo.clone();
             // Update the cloned element with insta data
             temp_elNxtIns.attr('src', objNI.source);
         
             // Append the updated element to the container
-            $('#insta-container').append(temp_elNxtIns);
+            setTimeout(() => {
+                $('#insta-container').append(temp_elNxtIns);
+            }, 330 * key)
+            key++;
         }
     }
+
+    handleScroll();
 })

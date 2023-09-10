@@ -1,8 +1,3 @@
-.rb-box.grow-transition {
-    transition: transform 1s ease;
-    transform: scale(1);
-}
-
 .rb-box {
     perspective: 1000px;
     position: relative;
