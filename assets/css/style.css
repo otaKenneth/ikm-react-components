@@ -185,6 +185,8 @@ header {
 }
 
 #vp-exclusive #shop-now {
+    width: Hug (149px);
+    height: Hug (42px);
     width: 100%;
     font-size: 18px;
     margin: 0px;
@@ -254,7 +256,51 @@ header {
 
 #new-in {
     height: 400px;
-    background: linear-gradient(90deg, rgba(255, 203, 124, 0) 0%, #FFCB7C 100%);
+    background-image: url('../images/new-in-bg.jpg');
+    background-position-y: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 0px; left: 0px;
+}
+
+#new-in #title-container {
+    height: 400px;
+    width: 40%;
+    position: absolute;
+    top: 47px; right: 0px;
+    color: #ffffff;
+}
+
+#new-in #title-container h1 {
+    width: 462px;
+    height: 172px;
+    font-size: 86px;
+    font-weight: 800;
+    line-height: 86px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#new-in #title-container h6 {
+    height: 34px;
+    top: 240px;
+    left: 799px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#new-in #title-container button.btn {
+    width: Hug (149px);
+    height: Hug (42px);
+    top: 317px;
+    left: 799px;
+    padding: 10px 20px 10px 20px;
+    gap: 15px;
+
 }
 
 #recently-bought {
