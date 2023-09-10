@@ -1,81 +1,3 @@
-const ar_trends = [
-    {
-        "name": "Winter Fashion",
-        "source": "assets/images/trends/Frame 2.png"
-    },
-    {
-        "name": "Boots",
-        "source": "assets/images/trends/Frame 2-1.png"
-    },
-    {
-        "name": "Night Out",
-        "source": "assets/images/trends/Frame 2-2.png"
-    },
-    {
-        "name": "Holidays",
-        "source": "assets/images/trends/Frame 2-3.png"
-    },
-    {
-        "name": "Outerwear",
-        "source": "assets/images/trends/Frame 2-4.png"
-    },
-    {
-        "name": "White Dresses",
-        "source": "assets/images/trends/Frame 2-5.png"
-    },
-    {
-        "name": "Sweaters",
-        "source": "assets/images/trends/Frame 2-6.png"
-    },
-    {
-        "name": "Party",
-        "source": "assets/images/trends/Frame 2-7.png"
-    }
-];
-
-const ar_recentlyBought = [
-    {
-        "description": "Festive Looks Rust Red Ribbed Velvet Long Sleeve Bodysuit",
-        "source": "assets/images/recently-bought/Frame 2.png",
-        "price": "38",
-        "currency": "USD",
-        "sale": false,
-        "sale_price": ""
-    },
-    {
-        "description": "Chevron Flap Crossbody Bag",
-        "source": "assets/images/recently-bought/Frame 2-2.png",
-        "price": "7.3",
-        "currency": "USD",
-        "sale": true,
-        "sale_price": "5.77"
-    },
-    {
-        "description": "Manilla Tan Multi Plaid Oversized Fringe Scarf",
-        "source": "assets/images/recently-bought/Frame 2-3.png",
-        "price": "39",
-        "currency": "USD",
-        "sale": true,
-        "sale_price": "29"
-    },
-    {
-        "description": "Diamante Puff Sleeve Dress - Black",
-        "source": "assets/images/recently-bought/Frame 2-1.png",
-        "price": "45.99",
-        "currency": "USD",
-        "sale": false,
-        "sale_price": ""
-    },
-    {
-        "description": "Banneth Open Front Formal Dress in Black",
-        "source": "assets/images/recently-bought/Frame 2-4.png",
-        "price": "99",
-        "currency": "USD",
-        "sale": true,
-        "sale_price": "69"
-    }
-];
-
 const ar_Insta = [
     {
         "source": "assets/images/insta/Rectangle 10.png"
@@ -104,12 +26,20 @@ var hasLoaded = {
 $(document).ready(() => {
     $(window).on('scroll', handleScroll);
 
+    // for header navigation
     $('#navigation #left-nav a').click((e) => {
         e.preventDefault();
         $('#navigation #left-nav a').removeClass('active');
         $(e.target).addClass('active');
     })
 
+    /**
+     * isElementInViewport
+     * to check if content is on view
+     * 
+     * @param {*} el 
+     * @returns bool
+     */
     function isElementInViewport (el) {
         var rect = el.getBoundingClientRect();
         return (
@@ -118,6 +48,10 @@ $(document).ready(() => {
         );
     }
 
+    /**
+     * handleScroll
+     * handling UX on scroll
+     */
     function handleScroll () {
         if (!hasLoaded.benefits) {
             if (isElementInViewport($('#benefits')[0])) {
